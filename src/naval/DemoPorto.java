@@ -24,5 +24,7 @@ public class DemoPorto {
         pc.setNome("Braga");
         
         porto.listAll();
+        
+        System.out.println("Carga total no porto: " + porto.totalCapacidade());
     }
 }
