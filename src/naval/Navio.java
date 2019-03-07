@@ -69,4 +69,8 @@ public class Navio {
         this.nome = nome;
     }
 
+    @Override
+    public String toString(){
+        return nome + ": " + matricula;
+    }
 }

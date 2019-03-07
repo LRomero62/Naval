@@ -15,11 +15,14 @@ public class DemoPorto {
         Petroleiro pt = new Petroleiro("1234");
         PortaContentores pc = new PortaContentores("2345");
         
+        porto.setNome("Sines");
         pt.setCarga(100);
         pc.setContentores(5);
         porto.novo(pt);
         porto.novo(pc);
         pt.setNome("Viana");
         pc.setNome("Braga");
+        
+        porto.listAll();
     }
 }

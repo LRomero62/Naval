@@ -13,6 +13,27 @@ import java.util.*;
  */
 public class Porto {
     private List<Navio> navios;
+    
+    private String nome = "Porto";
+
+    /**
+     * Get the value of nome
+     *
+     * @return the value of nome
+     */
+    public String getNome() {
+        return nome;
+    }
+
+    /**
+     * Set the value of nome
+     *
+     * @param nome new value of nome
+     */
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
 
     public Porto() {
         navios = new ArrayList<>();
@@ -52,5 +73,12 @@ public class Porto {
                 }
         }
         return total;
+    }
+    
+    public void listAll(){
+        System.out.println("Navios do porto: " + nome);
+        for(Navio n:navios){
+            System.out.println(n);
+        }
     }
 }
