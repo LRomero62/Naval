@@ -79,6 +79,7 @@ public class Porto {
         System.out.println("Navios do porto: " + nome);
         for(Navio n:navios){
             System.out.println(n);
+            
         }
     }
 }
