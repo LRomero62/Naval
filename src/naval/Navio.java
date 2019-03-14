@@ -5,6 +5,8 @@
  */
 package naval;
 
+import java.util.Objects;
+
 /**
  *
  * @author Romero
@@ -73,4 +75,33 @@ public class Navio {
     public String toString(){
         return nome + ": " + matricula;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 79 * hash + Objects.hashCode(this.nome);
+        hash = 79 * hash + Float.floatToIntBits(this.comprimento);
+        hash = 79 * hash + Objects.hashCode(this.matricula);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Navio other = (Navio) obj;
+        if (!Objects.equals(this.matricula, other.matricula)) {
+            return false;
+        }
+        return true;
+    }
+    
+    
 }

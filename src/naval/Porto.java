@@ -12,7 +12,7 @@ import java.util.*;
  * @author Romero
  */
 public class Porto {
-    private List<Navio> navios;
+    private Set<Navio> navios;
     
     private String nome = "Porto";
 
@@ -36,20 +36,19 @@ public class Porto {
 
 
     public Porto() {
-        navios = new ArrayList<>();
+        navios = new HashSet<>();
     }
     
     private Navio procura(String m){
-        Navio n = null;
-        for(int i=0; i<navios.size() && n==null; i++)
-            if(navios.get(i).getMatricula().compareTo(m)==0)
-                n = navios.get(i);
-        return n;
+        for(Navio n: navios)
+            if(n.getMatricula().compareTo(m)==0)
+                return n;
+        return null;
     }
     
     public void novo(Navio n){
-        Navio nv = procura(n.getMatricula());
-        if(nv==null && n!=null) navios.add(n);
+        if(!navios.contains(n))
+            navios.add(n);
     }
     
     public int totalContentores(){
