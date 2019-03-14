@@ -1,2 +1,2 @@
 # Naval
-Aula inicial de git
+A 2ª Aula de git
